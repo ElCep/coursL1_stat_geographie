@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Séance 1 - TD : statistiques appliquées</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="TD statistiques appliquées - Année : 2013/2014 - Université de Limoges">
+		<meta name="author" content="Etienne Delay - Geolab">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -36,25 +36,143 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+				<section data-background="images/space_invadors.jpg">
+					<h1>Hello world !</h1>
+					<h3>Séance 1 - TD : statistiques appliquées</h3>
+					<small>par <a href="http://recherche.flsh.unilim.fr/geolab/etienne-delay/">Etienne Delay</a> / etienne.delay@unilim.fr</small>
+					</br>
+					<small>Photo: CC by-nc-nd <a href="http://www.flickr.com/photos/37863735@N04/8673501750/in/photolist-edrXTC-edrVMy-edmihr-edmkJa-edmhWg-edmjbn-f1Kwa9-39Qjs3-rmtQg-casDrd-9iMjBy-9iJbWT-8cw3QY-9v1911-2GKJEQ-7rTTSa-emkzeH-2mpQEd-fhdAdr-5c3Uv3-yCtJK-6bTU6g-96dU14-g8p5z-5Dc42W-kqvQN-5fh9pn-4Qe4uS-2ntxvj-8bjmAj-4rbtEM-PChv3-8rUK4p-9qwLQF-9X1Vov-8cw67L-8cw6B3-feNP-9TDnHq-3a5q7L-Bi6F4-4SRRvM-asj21c-9WY9Wn-9WYaM4-9WY3uz-9X1ZAu-9X1RfN-9WY42a-9WY5fc-9X1QDL">Marie A.-C.</a></small>
+				</section>
+				<!-- Ma vie, mon oeuvre :-) -->
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<section>
+						<h2>Présentation</h2>
+					</section>
+					<section>
+						<h2>En quelques mots</h2>
+						<ul>
+							<li>La vie n'est pas un long fleuve tranquille (parcours personnel)</li>
+							<li>Doctorant en géographie au laboratoire <a href="http://recherche.flsh.unilim.fr/geolab/">GEOLAB</a></li>
+							<li>Sujet : les dynamiques paysagères des territoires viticoles de montagne</li>
+						</ul>
+						<img src="images/geolab.jpg">
+					</section>
+					<section>
+						<h2>2 terrains d'étude</h2>
+						<ul>
+							<li><a href="http://www.openstreetmap.org/?mlat=42.4794&mlon=3.1277#map=13/42.4794/3.1277">Banyuls-sur-Mer</a> (France)</li>
+							<li><a href="http://www.openstreetmap.org/?mlat=46.1892&mlon=11.2154#map=13/46.1892/11.2154">Le Val di Cembra</a> (Italie)</li>
+						</ul>
+							</br>
+							</br>
+							<p>2 territoires éloignés mais avec beaucoup de similarités : la viticulture héroïque, coopérative, double-activité…</p>
+						<img src="images/val_cembra.jpg">
+					</section>	
+					<section>
+						<h2>Ma spécialité</h2>
+						<p>La programmation à base d'agents</p>
+						<video preload="auto" controls="controls" src="video/lobesia.webm"></video>
+					</section>
+				</section>
+				
+				<!-- Présentaiton Outils / Philosophie logiciel libre -->
+				<section>
+					<section>
+						<h2>Présentation des outils</h2>
+					</section>
+					<section>
+						<h2>Pour faire tomber les idées reçues</h2>
+						<p>Statistiques &ne; Microsoft Excel ?</p>
+						<a href="http://fr.wikipedia.org/wiki/Comparaison_de_logiciels_de_statistiques">Une petite liste</a>
+						</br>
+						<img src="images/tomber.gif">
+					</section>
+					<section>
+						<h2>Les logiciels libres</h2>
+						<p>Libres parce que : <a href="http://www.gnu.org/philosophy/free-sw.html">4 libertés fondamentales</a></p>
+						<ul>
+							<li>liberté d'utiliser</li>
+							<li>liberté de copier</li>
+							<li>liberté d'étudier le logiciel (accessibilité du code)</li>
+							<li>liberté de modification et de redistribution des versions modifiées</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Quelles attentes peut-on avoir face aux logiciels libres?</h2>
+						<ul>
+							<li>Une communauté d'utilisateurs et de développeurs</li>
+							<li>Un système en évolution (importance des versions)</li>
+							<li>Un système adapté aux besoins des utilisateurs…</li>
+							<li>…mais qui ne peut pas se faire sans les utilisateurs (importance de la remontée de bugs, du partage d'expérience)</li>
+						</ul>
+						</br></br><p>Ce n'est pas pareil que l'achat d'un logiciel propriétaire…</p><h3><del>clientélisme</del></h3>
+					</section>
+					<section>
+						<h2>Exemples</h2>
+					</section>
+					<section>
+						<h2>Libre office</h2>
+						<ul>
+							<li>né en 2010 après le rachat d'OpenOffice par Oracle</li>
+							<li>volonté de la communauté de garder une branche libre d'OpenOffice</li>
+							<li>Refus d'Oracle de céder le nom "OpenOffice"</li>
+							<li>Développement d'un nouveau logiciel sur les bases de l'ancien</li>
+							<li>Distribué sous <a href="http://www.gnu.org/licenses/licenses.fr.html">licence GNU LGPL3</a></li>
+						</ul>
+						<img width="480" src="images/LibreOffice.png" alt="écran d'accueil de libreOffice">
+					</section>
+					<section>
+						<h2>R</h2>
+						<ul>
+							<li>Dérivé du langage S par John Chambers et ses collègues dans les années 80</li>
+							<li>Il est à la fois un langage de programmation et un logiciel de statistiques</li>
+							<li>Il est diffusé sous <a href="http://www.gnu.org/licenses/licenses.fr.html">licence GNU</a></li>
+							</ul>
+						<a href="http://www.r-project.org/"><img width="200" src="images/Rlogo.png" alt="Logo R"></a>
+					</section>
+					<section>
+						<h2>De bonnes raisons d'utiliser R</h2>
+						<img src="images/utilisation_R_articles_scient.png">
+						<small>Robert A. Muenchen, The Popularity of Data Analysis Software, consulté sur <a href="http://r4stats.com/articles/popularity/">http://r4stats.com/articles/popularity/</a> le 31/12/2013
+						</small>
+					</section>
+					<section>
+						<h2>De bonnes raisons d'utiliser R</h2>
+						<img src="images/Job_R.png">
+						<small>Robert A. Muenchen, The Popularity of Data Analysis Software, consulté sur <a href="http://r4stats.com/articles/popularity/">http://r4stats.com/articles/popularity/</a> le 31/12/2013
+						</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Objectifs</h2>
+					</section>
+					<section>
+						<h2>Objectifs du TD</h2>
+						<ul>
+							<li>Mobiliser des outils statistiques au bon moment (médiane, moyenne, écart-type…)</li>
+							<li>Savoir interpréter des résultats</li>
+							<li>Se former à un outil logiciel</li>
+						</ul>
+						<img src="images/swiss_knife.jpg">
+					</section>
+					<section>
+						<h2>Organisation du cours</h2>
+						<ul>
+							<li>Chaque groupe est fixe</li>
+							<li>Un exercice à faire par semaine (mis en ligne dimanche, à rendre jeudi)</li>
+							<li>Pour les questions je suis disponible par mail : quelques règles (netiquette)</li>
+						</ul>
+					</section>
+					<section>
+					<h2>Organisation de l'évaluation</h2>
+					</section>
+					<section>
+					<h2>Vous connaissez les règles</h2>
+					<small>maintenant à vous de jouer</small>
+					</section>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
