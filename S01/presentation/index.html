@@ -167,8 +167,9 @@
 					<section>
 						<h2>Organisation du cours</h2>
 						<ul>
-							<li>Chaque groupe est fixe</li>
-							<li>Un exercice à faire par semaine (mis en ligne dimanche, à rendre jeudi)</li>
+							<li>Chaque groupe est fixe (pour des raisons bassement matériel)</li>
+							<li>Un exercice à faire par semaine (mis en ligne dimanche, à rendre jeudi)
+							dans une format HTML ou makdown (j'y reviendrais)</li>
 							<li>Pour les questions je suis disponible par mail : quelques règles (netiquette)</li>
 						</ul>
 					</section>
@@ -204,8 +205,9 @@
 				    <h2>... et les statisticiens</h2>
 				    <p align="left">se sont : </p>
 				    <ul>
-				      <li>des orgres mangeurs de gros tableau de nombre qui ércute des valeurs moyennes et dessine des histogrammes pour ponctuer de pompeux discourt?</li>
-				      <li>des naïfs obstiné cherchant derrière n'importe quel amas de chiffre des secrets merveilleux?</li>
+				      <li>des ogres mangeurs de gros tableaux de nombres qui éructent des valeurs moyennes et dessinent des histogrammes 
+				      pour ponctuer de pompeux discours?</li>
+				      <li>des naïfs obstinés cherchant derrière n'importe quel amas de chiffre des secrets merveilleux?</li>
 				    </ul>
 				    </br>
 				    </br>
@@ -249,34 +251,132 @@
 				  </ul>  
 				  </section>
 				</section>
+				<!-- L'UTILISATION DE R PREMIERS PAS L'ENVIRONEMENT -->
+				<section>
+				  <section>
+				    <h2>Utilisation de R</h2>
+				    <h3>Premiers pas</h3>
+				  </section>
+				  <section>
+				    <h2>le shell</h2>
+				    <p>De quoi parle t-on?</br>
+				    C'est un interpréteur de commandes</p>
+				    <img src="images/bean.gif">
+				    <p>Un outils en ligne de commande!!! Aïe</p>
+				  </section>
+				  <section>
+				    <h2>Pris en main</h2>
+				    <p>Si R dispose dans sa version de base de la plupart des fonctionnalités utiles pour la statistique 
+				    courante, ses possibilités s'élargissent dès que l'on utilise les paquets (nous y reviendrons)</br>
+				    C'est en environement léger qui permet de faire de petites opérations, mais plus complexe</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+x<-7
+x+9
+[1] 16
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les scripts R</h2>
+				    <p>Les scripts sont des procédures qui seront effectuer les unes après les autres, et qui sont 
+				    enregistré dans un fichier texte.Cela va permettre d'effectuer des 
+				    opérations automatiquement</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+a<-sample(c(1:100), 1000, replace = TRUE)
+summary(a)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   27.00   52.50   51.51   75.00  100.00 
+				    </code></pre>
+				  </section>
+				  <section>
+				  <h2>Les commentaires</h2>
+				  <p>Ce sont des parties de code qui ne sont pas interprété par la console. Elle sont essentielle
+				  pour comprendre rapidement le code.</p>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# COMMENTS ARE SUPER IMPORTANT
+				    </code></pre>
+				  </section>
+				  <section>
+				  <h2>Les graphiques</h2>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+#farire une graphique de la variable a
+hist(a)
+#definit une distribution normale
+x = rnorm(1000, mean = 100, sd = 3)
+#faire le graphique de cette distribution
+hist(x)
+
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Des GUI <small>(Graphical User Interface)</small> pour R</h2>
+				    <p align="left">Il en exsite plusieurs et plusieur formes. Comme par exemple</p>
+				    <ul>
+				      <li><b>Rstudio</b> qui est une application <a href="http://fr.wikipedia.org/wiki/Standalone">standalone</a></li>
+				      <li><b>Rcmdr</b> qui est une librairie de R</li>
+				    </ul>
+				    </br>
+				    </br>
+				    <p align="left">Vous allez installer <b>Rcmdr</b>, en saisisant dans R : </p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+  install.packages("Rcmdr")
+				    </code></pre>
+				    <p align="left">puis vous le lancerez avec : </p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+  library(Rcmdr)
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Rcmdr (1)</h2>
+				    <img src="images/Rcmdr.png" width="600"></img>
+				  </section>
+				  <section>
+				    <h2>Rcmdr (2)</h2>
+				    <p align="left">Ce que Rcmdr va faire</p>
+				    <ul>
+				      <li>simplifier l'importation des données</li>
+				      <li>simplifier la visualisation des données</li>
+				      <li>simplifie la rédaction du compte rendu de TD</li>
+				      <li>...</li>
+				    </ul>
+				    <p align="left">Ce que Rcmdr ne va pas faire</p>
+				    <ul>
+				      <li>les opérations simples reste à votre charge</li>
+				      <li>ne dispence pas de comprendre le code</li>
+				    </ul>
+				  </section>
+				</section>
 				<!-- Des ressources et des choses à lire -->
 				<section>
-				<section>
-				  <h2>Ressources en ligne (1)</h2>
-				  <p align="left">les statistiques : ressources<p>
-				    <ul>
-				      <li>Stats pour les statophobes <a href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf">http://www.info.univ-angers.fr/statistiques_pour_statophobes.pdf</a></li>
-				      <li>Une introduction à R pour les Géographes <a href="http://elementr.parisgeo.cnrs.fr/">elementr.parisgeo.cnrs.fr</a></li>
-				    </ul>
+				  <section>
+				    <h2>De la bibliographie</h2>
 				  </section>
 				  <section>
-				  <h2>Ressources en ligne (1)</h2>
-				  <p align="left">les logiciels libre : ressources<p>
-				    <ul>
-				      <li>Le site de la fondation GNU : <a href="http://www.gnu.org/home.fr.html">www.gnu.org</a></li>
-				      <li>Le libre à l'université <a href="http://freakonometrics.hypotheses.org/5279">freakonometrics.hypotheses.org</a></li>
-				      <li>Etat de l'emplois pour les utilisateurs de R <a href="http://blog.revolutionanalytics.com/2013/11/data-science-job-postings-jump-30-in-three-months.html">http://blog.revolutionanalytics.com</a></li>
-				      <li>Usage de R dans la recherche <a href="http://blog.revolutionanalytics.com/2013/10/r-usage-skyrocketing-rexer-poll.html">http://blog.revolutionanalytics.com</a></li>
-				    </ul>
-				  </section>
-				  <section>
-				  <h2>Ressources en ligne (2)</h2>
-				  <p align="left">les logiciels libre : téléchargement<p>
-				    <ul>
-				      <li>Le site du projet R <a href="http://www.r-project.org/">www.r-project.org</a></li>
-				      <li>Le site pour télécharger Rstudio <a href="http://www.rstudio.com/">www.rstudio.com</a></li>
-				    </ul>
-				  </section>
+				    <h2>Ressources en ligne (1)</h2>
+				    <p align="left">les statistiques : ressources<p>
+				      <ul>
+					<li>Stats pour les statophobes <a href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf">http://www.info.univ-angers.fr/statistiques_pour_statophobes.pdf</a></li>
+					<li>Une introduction à R pour les Géographes <a href="http://elementr.parisgeo.cnrs.fr/">elementr.parisgeo.cnrs.fr</a></li>
+					<li>R en une heure pour les non programmeurs <a href="http://alyssafrazee.com/introducing-R.html">http://alyssafrazee.com/</a></li>
+				      </ul>
+				    </section>
+				    <section>
+				      <h2>Ressources en ligne (1)</h2>
+				      <p align="left">les logiciels libre : ressources<p>
+				      <ul>
+					<li>Le site de la fondation GNU : <a href="http://www.gnu.org/home.fr.html">www.gnu.org</a></li>
+					<li>Le libre à l'université <a href="http://freakonometrics.hypotheses.org/5279">freakonometrics.hypotheses.org</a></li>
+					<li>Etat de l'emplois pour les utilisateurs de R <a href="http://blog.revolutionanalytics.com/2013/11/data-science-job-postings-jump-30-in-three-months.html">http://blog.revolutionanalytics.com</a></li>
+					<li>Usage de R dans la recherche <a href="http://blog.revolutionanalytics.com/2013/10/r-usage-skyrocketing-rexer-poll.html">http://blog.revolutionanalytics.com</a></li>
+				      </ul>
+				    </section>
+				    <section>
+				    <h2>Ressources en ligne (2)</h2>
+				    <p align="left">les logiciels libre : téléchargement<p>
+				      <ul>
+					<li>Le site du projet R <a href="http://www.r-project.org/">www.r-project.org</a></li>
+					<li>Le site pour télécharger Rstudio <a href="http://www.rstudio.com/">www.rstudio.com</a></li>
+				      </ul>
+				    </section>
 				</section>
 
 				<!-- Example of nested vertical slides -->
