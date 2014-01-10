@@ -37,7 +37,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-background="images/space_invadors.jpg">
-					<h1>Hello world !</h1>
+					<h1><a href="http://fr.wikipedia.org/wiki/Hello_world">Hello world</a> !</h1>
 					<h3>Séance 1 - TD : statistiques appliquées</h3>
 					<small>par <a href="http://recherche.flsh.unilim.fr/geolab/etienne-delay/">Etienne Delay</a> / etienne.delay@unilim.fr</small>
 					</br>
@@ -307,6 +307,25 @@ x+9
 				    </code></pre>
 				  </section>
 				  <section>
+				    <h2>La définition de variables</h2>
+				    <p>vous avez peut être noté dans la <a href="#/6/2">diapo précédente</a> l'utilisation de "<-" ? cela permet de  définir
+				    une varable.</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+x<-7
+y="Hello_world"
+
+				    </code></pre>
+				    <p>cela nous permet de stocker des varables dans des petites boites pour pouvoir les appeller plus tard, et 
+				    manipuler des objets complexe.</p>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+ x
+[1] 7
+y
+[1] "Hello_world"
+
+				    </code></pre>
+				  </section>
+				  <section>
 				    <h2>Les scripts R</h2>
 				    <p>Les scripts sont des procédures qui seront effectuer les unes après les autres, et qui sont 
 				    enregistré dans un fichier texte.Cela va permettre d'effectuer des 
@@ -332,12 +351,73 @@ summary(a)
 #farire une graphique de la variable a
 hist(a)
 #definit une distribution normale
-x = rnorm(1000, mean = 100, sd = 3)
+x <- rnorm(1000, mean = 100, sd = 3)
 #faire le graphique de cette distribution
 hist(x)
 
 				    </code></pre>
 				    <img width="450" src="images/histogram.png"></img>
+				  </section>
+				  <section>
+				    <h2>Demander de l'aide à la machine</h2>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# Si vous connaissez le nom d'une fonction
+# et vous voulez savoir comment l'utiliser
+?table
+
+# Si vous savez ce que vous voulez faire, mais pas comment...
+??table
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les types de données</h2>
+				    <p>Comme dans n'importe quelle langage, les données sont/peuvent êtres typé. De ce type vont dépendre
+				    certain comportement de fonction et certainne manipulation</p>
+				    <h3>Vector</h3>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# character vector
+y <- c("apple", "apple", "banana", "kiwi", "bear", "strawberry", "strawberry")
+length(y)
+[1] 7
+# numeric vector
+numbers <- seq(from=3,to=99,by=2.5)
+numbers
+[1]  3.0  5.5  8.0 10.5 13.0 15.5 18.0 20.5 23.0 25.5 28.0 30.5 33.0 35.5 38.0 40.5 43.0 45.5 48.0 50.5 53.0 55.5 58.0 60.5
+[25] 63.0 65.5 68.0 70.5 73.0 75.5 78.0 80.5 83.0 85.5 88.0 90.5 93.0 95.5 98.0
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les types de données</h2>
+				    <h3>Matrix</h3>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+mymatrix <- matrix(c(10, 15, 3, 29), nrow = 2, byrow = TRUE)
+mymatrix
+     [,1] [,2]
+[1,]   10   15
+[2,]    3   29
+solve(mymatrix)
+				    </code></pre>
+				    <p>comment fonctionne la fonction solve?</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+?solve
+				    </code></pre>
+				    <img src="images/matrix.gif"></img>
+				  </section>
+				  <section>
+				  <h2>Les data frames</h2>
+				  <p>ce qui se rapporche le plus des données structuré en base de donnée, ou en feuille de tableur</p>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# set working directory
+setwd("~/Documents/R_intro")
+
+#read in a dataset
+wages = read.table("wages.csv", sep = ",", header = TRUE)
+
+#read csv
+wages = read.csv("wages.csv", header = TRUE, skip=6)
+
+??read
+				    </code></pre>
 				  </section>
 				  <section>
 				    <h2>Des GUI <small>(Graphical User Interface)</small> pour R</h2>
@@ -393,6 +473,7 @@ hist(x)
 					<li>Stats pour les statophobes <a href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf">http://www.info.univ-angers.fr/statistiques_pour_statophobes.pdf</a></li>
 					<li>Une introduction à R pour les Géographes <a href="http://elementr.parisgeo.cnrs.fr/">elementr.parisgeo.cnrs.fr</a></li>
 					<li>R en une heure pour les non programmeurs <a href="http://alyssafrazee.com/introducing-R.html">http://alyssafrazee.com/</a></li>
+					<li>Des tuto pour les statistqiue avec R <a href="http://www.r-tutor.com/elementary-statistics/goodness-fit/chi-squared-test-independence">www.r-tutor.com</a></li>
 				      </ul>
 				    </section>
 				    <section>
