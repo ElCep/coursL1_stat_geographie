@@ -1,0 +1,654 @@
+!<doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Séance 1 - TD : statistiques appliquées</title>
+
+		<meta name="description" content="TD statistiques appliquées - Année : 2013/2014 - Université de Limoges">
+		<meta name="author" content="Etienne Delay - Geolab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="images/space_invadors.jpg">
+					<h1>Résumer, classifier !</h1>
+					<h3>Séance 3 - TD : statistiques appliquées</h3>
+					<small>par <a href="http://recherche.flsh.unilim.fr/geolab/etienne-delay/">Etienne Delay</a> / etienne.delay@unilim.fr</small>
+				</section>
+				<!-- Les indices résumés : localisation et dispersion -->
+				<section>
+					<section>
+						<h2>Les indices résumés</h2>
+						<h3>Localisation ou dispersion</h3>
+					</section>
+					<section>
+						<h2>En quelques mots</h2>
+						<ul>
+							<li>Les séries statistiques sous souvent difficile à appréhender dans leur globalité</li>
+							<li>Résumer pour appercevoire la globalité</li>
+							<li>Limiter la perte d'information</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Les paramètres de localisation</h2>
+						<ul>
+							<li>La moyenne</li>
+							<li>La médiane</li>
+							<li>Le mode</li>
+						</ul>
+					</section>	
+					<section>
+						<h3>Les paramètres de localisation</h3>
+						<h2>La moyenne</h2>
+						
+					</section>
+				</section>
+				
+				<!-- Présentaiton Outils / Philosophie logiciel libre -->
+				<section>
+					<section>
+						<h2>Présentation des outils</h2>
+					</section>
+					<section>
+						<h2>Pour faire tomber les idées reçues</h2>
+						<p>Statistiques &ne; Microsoft Excel ?</p>
+						<a href="http://fr.wikipedia.org/wiki/Comparaison_de_logiciels_de_statistiques">Une petite liste</a>
+						</br>
+						<img src="images/tomber.gif">
+					</section>
+					<section>
+						<h2>Les logiciels libres</h2>
+						<p>Libres parce que : <a href="http://www.gnu.org/philosophy/free-sw.html">4 libertés fondamentales</a></p>
+						<ul>
+							<li>liberté d'utiliser</li>
+							<li>liberté de copier</li>
+							<li>liberté d'étudier le logiciel (accessibilité du code)</li>
+							<li>liberté de modification et de redistribution des versions modifiées</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Quelles attentes peut-on avoir face aux logiciels libres?</h2>
+						<ul>
+							<li>Une communauté d'utilisateurs et de développeurs</li>
+							<li>Un système en évolution (importance des versions)</li>
+							<li>Un système adapté aux besoins des utilisateurs…</li>
+							<li>…mais qui ne peut pas se faire sans les utilisateurs (importance de la remontée de bugs, du partage d'expérience)</li>
+						</ul>
+						</br></br><p>Ce n'est pas pareil que l'achat d'un logiciel propriétaire…</p><h3><del>clientélisme</del></h3>
+					</section>
+					<section>
+					<blockquote cite="http://freakonometrics.hypotheses.org/5279">
+						&ldquo;on garde une forme d’attachement, ou de sécurité, à travailler
+						avec les logiciels que l’on a vus (voire appris) durant nos études.[...]
+						(car admettons le, on est tous aussi nuls les uns que les autres avec l’informatique)&rdquo;
+					</blockquote>
+					<p align="right"><a href="http://freakonometrics.hypotheses.org/5279">Arthur Charpentier</a></p>
+					</section>
+					<section>
+						<h2>Exemples</h2>
+					</section>
+					<section>
+						<h2>Libre office</h2>
+						<ul>
+							<li>né en 2010 après le rachat d'OpenOffice par Oracle</li>
+							<li>volonté de la communauté de garder une branche libre d'OpenOffice</li>
+							<li>Refus d'Oracle de céder le nom "OpenOffice"</li>
+							<li>Développement d'un nouveau logiciel sur les bases de l'ancien</li>
+							<li>Distribué sous <a href="http://www.gnu.org/licenses/licenses.fr.html">licence GNU LGPL3</a></li>
+						</ul>
+						<img width="480" src="images/LibreOffice.png" alt="écran d'accueil de libreOffice">
+					</section>
+					<section>
+						<h2>R</h2>
+						<ul>
+							<li>Dérivé du langage S par John Chambers et ses collègues dans les années 80</li>
+							<li>Il est à la fois un langage de programmation et un logiciel de statistiques</li>
+							<li>Il est diffusé sous <a href="http://www.gnu.org/licenses/licenses.fr.html">licence GNU</a></li>
+							</ul>
+						<a href="http://www.r-project.org/"><img width="200" src="images/Rlogo.png" alt="Logo R"></a>
+					</section>
+					<section>
+						<h2>De bonnes raisons d'utiliser R</h2>
+						<img src="images/utilisation_R_articles_scient.png"></img>
+						<small>Robert A. Muenchen, The Popularity of Data Analysis Software, consulté sur <a href="http://r4stats.com/articles/popularity/">http://r4stats.com/articles/popularity/</a> le 31/12/2013
+						</small>
+					</section>
+					<section>
+						<h2>D'autres bonnes raisons d'utiliser R</h2>
+						<img src="images/Job_R.png">
+						<small>Robert A. Muenchen, The Popularity of Data Analysis Software, consulté sur <a href="http://r4stats.com/articles/popularity/">http://r4stats.com/articles/popularity/</a> le 31/12/2013
+						</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Objectifs</h2>
+					</section>
+					<section>
+						<h2>Objectifs du TD</h2>
+						<ul>
+							<li>Mobiliser des outils statistiques au bon moment (médiane, moyenne, écart-type…)</li>
+							<li>Savoir interpréter des résultats</li>
+							<li>Se former à un outil logiciel</li>
+							<li>Acquérir une autonomie grâce aux mailing lists et différents forums</li>
+						</ul>
+						<img src="images/swiss_knife.jpg">
+					</section>
+					<section>
+						<h2>Organisation du cours</h2>
+						<ul>
+							<li>Chaque groupe est fixe (pour des raisons bassement matérielles)</li>
+							<li>Un exercice à faire par semaine (mis en ligne le vendredi, à rendre jeudi)</li>
+							<li>Une plateforme de cours en ligne avec support de cours et exercices (<a href="https://moodle-flsh.unilim.fr/course/index.php?categoryid=3">https://moodle-flsh.unilim.fr/</a>)</li>
+							<li>Pour les questions</li>
+							  <ol>
+							    <li>Un <b>forum</b> est à votre disposition sur la plateforme moodle</li>
+							    <li>Je suis disponible par mail : quelques règles (netiquette)</li>
+							  </ol>
+						</ul>
+						</br>
+						</br>
+						<p>Une fois que vous aurez l'outils et les notions en main, nous travaillerons sur un cas concret : la modélisation de population de lobesias</p>
+					</section>
+					<section>
+					  <h2>Organisation de l'évaluation</h2>
+					  <p align="left">60% de l'évaluation &#8596; sur la plateforme moodle</p>
+					  <ul>
+					    <li>une moyenne d'un exercice par semaine + quizz</li>
+					    <li>note de participation sur les forums moodle</li>
+					  </ul>
+					  <p align="left">40% de l'évaluation &#8596; un exercice final</p>
+					</section>
+					<section>
+					  <h2>Vous connaissez les règles</h2>
+					  <small>maintenant à vous de jouer</small>
+					</section>
+				</section>
+				<!-- introduction -->
+				<section>
+				  <section>
+				    <h2>Indroduction</h2>
+				    <h3>les statistiques : généralitées</h3>
+				    <small>librement inspiré du livre <i>&ldquo;<a href="http://www.amazon.fr/LEMPEREUR-GIRAFE-Le%C3%A7ons-%C3%A9l%C3%A9mentaires-statistiques/dp/2843520290/ref=sr_1_2?s=books&ie=UTF8&qid=1388676406&sr=1-2&keywords=L%27EMPEREUR+ET+LA+GIRAFE">l'empereur et la girafe</a>&rdquo;</i></small>
+				  </section>
+				  <section>
+				    <h2>les statistiques ...</h2>
+				    <p><b>Les Statistiques</b> : une forme élaborée de mensonge? </br>
+				    En fait non &#9786;</p>
+				    C'est une discipline scientifique composée de deux branches : 
+				    <ul>
+				      <li><b>la statistique descriptive</b>: méthodes et techniques mathématiques permettant de présenter, décrire et résumer les données</li>
+				      <li><b>la statistique inférentielle</b> : calcul des probabilités pour tenter d’expliquer, interpréter et éventuellement extrapoler les "résumés obtenus"</li>
+				    </ul>
+				    </br>
+				    </br>
+				    <p>avec de nombreux aller-retour entre les deux!</p>
+				  </section>
+				  <section data-background="images/ogre.jpg">
+				    <h2>... et les statisticiens</h2>
+				    <p align="left">se sont : </p>
+				    <ul>
+				      <li>des ogres mangeurs de gros tableaux de nombres qui éructent des valeurs moyennes et dessinent des histogrammes 
+				      pour ponctuer de pompeux discours ?</li>
+				      <li>des naïfs obstinés cherchant derrière n'importe quel amas de chiffre des secrets merveilleux ?</li>
+				    </ul>
+				    </br>
+				    </br>
+				    <p>Plus simplement un curieux qui se donne des moyens et des outils pour satisfaire en partie sa curiosité</p>
+				  </section>
+				</section>
+				<!--<section>
+				  <section>
+				    <h2>Indroduction</h2>
+				    <h3>le contexte de travail</h3>
+				  </section>
+				  <section>
+				    <h2>Les lobesias</h2>
+				    <p>Les <i><a href="http://www7.inra.fr/hyppz/RAVAGEUR/3lobbot.htm">Lobesia botrana</a></i> sont de petits papillons (ordre des <a href="http://en.wikipedia.org/wiki/Lepidoptera">Lepidoptera</a>)
+				    qui parazite la vigne, le garou et le lierre. </p>
+				    <img src="images/lobesia.jpg" alt="lobesia adulte sur feuille de vigne"></img></br>
+				    <small>source : <a href="http://www7.inra.fr/hyppz/IMAGES/7032130.jpg">HYPPZ</a>-INRA</small>
+				  </section>
+				  <section>
+				    <h2>un peut d'écologie</h2>
+				    <ul>
+				      <li>4 stades d'évoution (Oeuf, Larve, Chrysalide, Adulte)</li>
+				      <li>durée de vie : 10 à 12 jours (au stade adulte)</li>
+				      <li>peut effectuer des vols de plusieurs centaines de mètres</li>
+				      <li>Fécondité : 20 à 60 oeufs</li>
+				      <li>les dégats : </li>
+					<ol>
+					  <li>les chenilles rongent les grains presque mûrs</li>
+					  <li>developpement de moisissures (<i>Botrytis</i>)</li>
+					  <li>les grains attaqués brunissent à l'endroit lésé et pourrissent</li>
+					  <li>les moisissures rendent la vinification difficile et on peut être amené à vendanger précocement</li>
+					</ol>
+				    </ul>
+				  </section>
+				  <section>
+				  <h2>Un modèle multi-agents</h2>
+				  <p align="left">Une recherche en court :</p>
+				  <ul>
+				    <li>ces dynamiques sont très étudié (94 articles entre 2010 et 2014 sur <i>sciencedirect</i>, 28 par ans ces deux derniere années)</li>
+				    <li>l'espace n'est pas facilement pris en compte dans les modélisation statistique</li>
+				    <li>L'agence de protection environnementale de la Sardegne a déveloopper un modèle statistique (inférenciel) sur les données observé.</li>
+				    <li>traduit en R puis porté en netlogo par Amélia Caffarra et moi même</li>
+				  </ul>  
+				  </section>
+				  <section>
+				    <h2>Un cas concrets : Banyuls-sur-mer</h2>
+				    <p>Exploration des données, du territoire &#8614; au modèle</p>
+				    <center>
+				      <table>
+					<td><img src="images/temperature_maps_2012_banyuls.png" alt="carte de température de Banyuls sur Mer"></img><br></td>
+					<td><img src="images/capteur.jpg" alt="capteur terviclim Banyuls"></img></td>
+				      </table>
+				    </center>
+				  </section>
+				  <section>
+				  <h2>Ce que nous allons faire en 24h</h2>
+				  <img src="images/24h.gif" alt="24h"></img>
+				  <ul>
+				    <li>explorer et charactérister des données de température issu des capteurs <a href="http://terviclim.in2p3.fr/">TerViClim</a> sur l'AOC Banyuls</li>
+				    <li>préparer les données pour le modèle netlogo</li>
+				    <li>analyser les données de sortie de modèle</li>
+				      <ul>
+					<li>caractérister les séries statistqiues des sorties de modèles</li>
+					<li>définir la meilleur stratégies de lute contres les lobesias</li>
+				      </ul>
+				  <ul>
+				  </section>
+				</section>-->
+				<!-- L'UTILISATION DE R PREMIERS PAS L'ENVIRONEMENT -->
+				<section>
+				  <section>
+				    <h2>Utilisation de R</h2>
+				    <h3>Premiers pas</h3>
+				  </section>
+				  <section>
+				    <h2>le shell</h2>
+				    <p>De quoi parle-t-on?</br>
+				    &#8594; C'est un interpréteur de commandes</p>
+				    <img src="images/bean.gif">
+				    <p>Un outil en ligne de commande!!! Aïe</p>
+				  </section>
+				  <section>
+				    <h2>Prise en main</h2>
+				    <p>Si R dispose dans sa version de base de la plupart des fonctionnalités utiles pour la statistique 
+				    courante, ses possibilités s'élargissent dès que l'on utilise les paquets (nous y reviendrons)</br>
+				    C'est un environnement léger qui permet de faire de petites opérations, mais aussi de plus complexes</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+x<-7
+x+9
+[1] 16
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>La définition d'une variable</h2>
+				    <p>Vous avez peut-être noté dans la <a href="#/6/2">diapo précédente</a> l'utilisation de "<-" ? Cela permet de définir
+				    une variable.</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+x<-7
+y="Hello_world"
+
+				    </code></pre>
+				    <p>Cela nous permet de stocker des variables dans des petites boîtes pour pouvoir les appeler plus tard, et 
+				    les manipuler des objets complexe</p>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+ x
+[1] 7
+y
+[1] "Hello_world"
+
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les scripts R</h2>
+				    <p>Les scripts sont des procédures qui seront effectuées les unes après les autres, et qui sont 
+				    enregistrées dans un fichier texte. Cela permet d'effectuer des 
+				    opérations automatiquement</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+a<-sample(c(1:100), 1000, replace = TRUE)
+summary(a)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00   27.00   52.50   51.51   75.00  100.00 
+				    </code></pre>
+				  </section>
+				  <section>
+				  <h2>Les commentaires</h2>
+				  <p>Ce sont des parties de code qui ne sont pas interprétées par la console. Les commentaires sont essentiels
+				  pour comprendre rapidement un code que l'on n'a pas fait soi-même.</p>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# COMMENTS ARE SUPER IMPORTANT
+				    </code></pre>
+				  </section>
+				  <section>
+				  <h2>Les graphiques</h2>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+#faire une graphique de la variable a
+hist(a)
+#definir une distribution normale
+x <- rnorm(1000, mean = 100, sd = 3)
+#faire le graphique de cette distribution
+hist(x)
+
+				    </code></pre>
+				    <img width="450" src="images/histogram.png"></img>
+				  </section>
+				  <section>
+				    <h2>Demander de l'aide à la machine</h2>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# Si vous connaissez le nom d'une fonction
+# et vous voulez savoir comment l'utiliser
+?table
+
+# Si vous savez ce que vous voulez faire, mais pas comment...
+??table
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les types de données</h2>
+				    <p>Comme dans n'importe quel langage, les données sont/peuvent être typées. De ces types vont dépendre
+				    certains comportements des fonctions et certaines manipulations</p>
+				    <h3>Vector (vecteurs)</h3>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# character vector
+y <- c("apple", "apple", "banana", "kiwi", "bear", "strawberry", "strawberry")
+length(y)
+[1] 7
+# numeric vector
+numbers <- seq(from=3,to=99,by=2.5)
+numbers
+[1]  3.0  5.5  8.0 10.5 13.0 15.5 18.0 20.5 23.0 25.5 28.0 30.5 33.0 35.5 38.0 40.5 43.0 45.5 48.0 50.5 53.0 55.5 58.0 60.5
+[25] 63.0 65.5 68.0 70.5 73.0 75.5 78.0 80.5 83.0 85.5 88.0 90.5 93.0 95.5 98.0
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Les types de données</h2>
+				    <h3>Matrix (matrice)</h3>
+				     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+mymatrix <- matrix(c(10, 15, 3, 29), nrow = 2, byrow = TRUE)
+mymatrix
+     [,1] [,2]
+[1,]   10   15
+[2,]    3   29
+solve(mymatrix)
+				    </code></pre>
+				    <p>Comment fonctionne la fonction solve?</p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+?solve
+				    </code></pre>
+				    <img src="images/matrix.gif"></img>
+				  </section>
+				  <section>
+				  <h2>Les data frames (tableaux)</h2>
+				  <p>ce qui se rapproche le plus des données structurées en base de données, ou en feuille de tableur</p>
+				  <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# set working directory
+setwd("~/Documents/R_intro")
+
+#read in a dataset
+wages = read.table("wages.csv", sep = ",", header = TRUE)
+
+#read csv
+wages = read.csv("wages.csv", header = TRUE, skip=6)
+
+??read
+				    </code></pre>
+				  </section>
+				  <section>
+				    <h2>Des GUI <small>(Graphical User Interface)</small> pour R</h2>
+				    <p align="left">Pour vous aider à construire vos scripts R, rien de tel qu'un environnement graphique. Comme par exemple :</p>
+				    <ul>
+				      <li><b>Rstudio</b> qui est une application <a href="http://fr.wikipedia.org/wiki/Standalone">standalone</a></li>
+				      <li><b>Rcmdr</b> qui est une librairie de R</li>
+				    </ul>
+				    </br>
+				    </br>
+				    <p align="left">Vous allez installer <b>Rcmdr</b>, en saisisant dans R : </p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+  install.packages("Rcmdr")
+				    </code></pre>
+				    <p align="left">puis vous le lancerez avec: </p>
+				    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+  library(Rcmdr)
+				    </code></pre>
+				  </section>
+				  <!--<section>
+				    <h2>Rcmdr (1)</h2>
+				    <img src="images/Rcmdr.png" width="600"></img>
+				  </section>
+				  <section>
+				    <h2>Rcmdr (2)</h2>
+				    <p align="left">Ce que Rcmdr va faire</p>
+				    <ul>
+				      <li>simplifier l'importation des données</li>
+				      <li>simplifier la visualisation des données</li>
+				      <li>simplifie la rédaction du compte rendu de TD (dont vous devrez vous reservir pour l'évaluation)</li>
+				      <li>...</li>
+				    </ul>
+				    <p align="left">Ce que Rcmdr ne va pas faire</p>
+				    <ul>
+				      <li>les opérations simples reste à votre charge</li>
+				      <li>ne dispence pas de comprendre le code</li>
+				    </ul>
+				  </section>-->
+				</section>
+				<!-- Du VOCABULAIRE ELEMENTAIRE -->
+				<section>
+				  <section>
+				  <h2>Le vocabulaire élémentaire</h2>
+				  </section>
+				  <section>
+				    <h2>Tout est affaire de convention</h2>
+				    <ul>
+				      <li><b>individu</b> ou unité statistique : tout élément de la population</li>
+				      <li><b>population</b>: ensemble des individus observés</li>
+				      <li><b>effectif total</b>: nombre d'individus observés</li>
+				    </ul>
+				    <p>
+				    Population &#8594; Individus</br>
+				    Population française &#8594; chaque individu</br>
+				    Ensemble des stations météo &#8594; chaque station<br>
+				    Population monde &#8594; Population française
+				    </p>
+				  </section>
+				  <section>
+				    <h2>variables et modalités</h2>
+				    <ul>
+				      <li><b>Variables ou caractères</b>: Propriétés communes à tous les éléments d’une population statistique.
+				      On distingue deux grands types de caractère :</li>
+				      <ul>
+					<li>qualitatif</li>
+					<li>quantitatif</li>
+				      </ul>
+				      <li><b>Modalités</b>:  Valeur ou situation prise par un caractère statistique</li>
+				    </ul>
+				  </section>
+				  <section>
+				  <h2>On ne fait pas ce que l'on veut !</h2>
+				  <ul>
+				    <li>Les variables quantitatives: on parlera de variables quantitatives lorsque l'on mesure</li>
+				    <li>Les variables ordinales (ce sont des variables quantitatives ordonnées)</li>
+				    <li>Les variables qualitatives (ou nominales), quand il n'y a pas d'ordre dans les données</li>
+				  </ul>
+				  </section>
+				</section>
+				<!-- la manipulation des données réel -->
+				<section>
+				    <section>
+				      <h2>Manipulation de données réelles !</h2>
+		<p>Caractériser des données</p>		    
+					</section>
+				    <section>
+				      <h2>Chargement de données externes</h2>
+				      <p>Vous téléchargerez le jeu de données </p>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+# set working directory
+setwd("~/Documents/R_intro")
+#read csv
+data<-read.csv("salaries.csv",head=TRUE))
+					</code></pre>
+				    </section>
+				    <section>
+				      <h2>Se déplacer dans les données</h2>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+data[1,] #selectionner une ligne
+data[,1] #selectionner une colonne
+data[1,1] #ligne et colonne
+data$colonne #selectionner la colonne nommée colonne
+					</code></pre>
+				    </section>
+				    <section>
+				      <h2>Caractériser des données</h2>
+				      <p>On va s'intéresser à deux fonctions en particulier</p>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+str(data)
+summary(data)
+					</code></pre>
+				    </section>
+				    <section>
+				      <h2>Les types de données ?</h2>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+>str(data)
+'data.frame':	8 obs. of  5 variables:
+ $ v.nb.salariés: Factor w/ 8 levels "0","1","11-15",..: 1 2 5 7 8 3 4 6
+ $ v.effectif   : Factor w/ 8 levels "137852","14173",..: 5 3 1 6 7 4 8 2
+ $ proF         : num  0.8 0.35 0.45 0.78 0.21 0.74 0.12 0.4
+ $ classK40     : num  2 1 3 6 7 5 4 8
+ $ type         : chr  "A" "C" "B" "C" ...
+					</code></pre>
+				    </section>
+				    <section>
+				      <h2>Les types de données ?</h2>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+> summary(data)
+v.nb.salaries   v.effectif          proF           classK40        type          
+ 0      :1     Min.   :  7783   Min.   :0.1200   Min.   :1.00   Length:8          
+ 1      :1     1st Qu.: 19453   1st Qu.:0.3150   1st Qu.:2.75   Class :character  
+ 11-15  :1     Median : 71054   Median :0.4250   Median :4.50   Mode  :character  
+ 16-19  :1     Mean   :104671   Mean   :0.4813   Mean   :4.50                     
+ 2-3    :1     3rd Qu.:147275   3rd Qu.:0.7500   3rd Qu.:6.25                     
+ 20 et +:1     Max.   :338691   Max.   :0.8000   Max.   :8.00                     
+					</code></pre>
+				    </section>
+				    <section>
+				    <h2>Les graphiques</h2>
+				      <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+demo("graphics")
+barplot(data$v.effectif,names.arg=data$v.nb.salaries,ylab="nb salariés",main="effectif des salariés \n en fonction de la taille de l'entreprise")
+
+				      </code></pre>
+				      <p align="right">Plusieurs types de graphiques</p>
+				      <ul>
+					<li>plot()</li>
+					<li>pie()</li>
+					<li>hist()</li>
+					<li>...</li>
+				      </ul>
+				    </section>
+				 </section>
+				<!-- Des ressources et des choses à lire -->
+				<section>
+				  <section>
+				    <h2>De la bibliographie</h2>
+				  </section>
+				  <section>
+				    <h2>Ressources en ligne (1)</h2>
+				    <p align="left">Les statistiques : ressources<p>
+				      <ul>
+					<li>Stats pour les statophobes <a href="http://www.info.univ-angers.fr/~gh/tuteurs/statistiques_pour_statophobes.pdf">http://www.info.univ-angers.fr/statistiques_pour_statophobes.pdf</a></li>
+					<li>Une introduction à R pour les Géographes <a href="http://elementr.parisgeo.cnrs.fr/">elementr.parisgeo.cnrs.fr</a></li>
+					<li>R en une heure pour les non-programmeurs <a href="http://alyssafrazee.com/introducing-R.html">http://alyssafrazee.com/</a></li>
+					<li>Des tutos pour les statistiques avec R <a href="http://www.r-tutor.com/elementary-statistics/goodness-fit/chi-squared-test-independence">www.r-tutor.com</a></li>
+				      </ul>
+				    </section>
+				    <section>
+				      <h2>Ressources en ligne (1)</h2>
+				      <p align="left">Les logiciels libre : ressources<p>
+				      <ul>
+					<li>Le site de la fondation GNU : <a href="http://www.gnu.org/home.fr.html">www.gnu.org</a></li>
+					<li>Le libre à l'université <a href="http://freakonometrics.hypotheses.org/5279">freakonometrics.hypotheses.org</a></li>
+					<li>Etat de l'emploi pour les utilisateurs de R <a href="http://blog.revolutionanalytics.com/2013/11/data-science-job-postings-jump-30-in-three-months.html">http://blog.revolutionanalytics.com</a></li>
+					<li>Usage de R dans la recherche <a href="http://blog.revolutionanalytics.com/2013/10/r-usage-skyrocketing-rexer-poll.html">http://blog.revolutionanalytics.com</a></li>
+				      </ul>
+				    </section>
+				    <section>
+				    <h2>Ressources en ligne (2)</h2>
+				    <p align="left">Les logiciels libres : téléchargement<p>
+				      <ul>
+					<li>Le site du projet R <a href="http://www.r-project.org/">www.r-project.org</a></li>
+					<li>Le site pour télécharger Rstudio <a href="http://www.rstudio.com/">www.rstudio.com</a></li>
+				      </ul>
+				    </section>
+				</section>
+				<section>
+					<h1>THE END</h1>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '/plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
